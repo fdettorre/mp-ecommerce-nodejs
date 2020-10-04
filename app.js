@@ -69,13 +69,15 @@ app.get('/add-preferencia', function(req, res) {
             quantity: unit,
         }],
         payment_methods: {
+            excluded_payment_methods: [{
+                id: "amex",
+            }],
             excluded_payment_types: [{
-                    id: "amex",
-                },
-                {
-                    id: "atm",
-                },
-            ],
+                //     id: "amex",
+                // },
+                // {
+                id: "atm",
+            }, ],
             installments: 6,
         },
         payer: {
