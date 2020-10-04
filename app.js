@@ -4,10 +4,15 @@ const mercadopago = require("mercadopago");
 
 var app = express();
 
+var bodyParser = require('body-parser')
+
 const port = process.env.PORT || 3000;
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res) {
     res.render('home');
@@ -93,6 +98,7 @@ app.get('/add-preferencia', function(req, res) {
             failure: rejected
         },
         auto_return: "approved",
+        notification_url: "https://fdettorre-mp-commerce-nodejs.herokuapp.com/notifications?source_news=webhooks"
     };
 
     mercadopago.configure({
@@ -122,6 +128,15 @@ app.get('/pending', function(req, res) {
 
 app.get('/rejected', function(req, res) {
     res.render('rejected', req.query);
+});
+
+app.post('/notifications', function(req, res) {
+    try {
+        res.sendStatus(200);
+    } catch (error) {
+        res.sendStatus(404);
+    }
+
 });
 
 
