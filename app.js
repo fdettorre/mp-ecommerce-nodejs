@@ -4,6 +4,8 @@ const mercadopago = require("mercadopago");
 
 var app = express();
 
+const port = process.env.PORT || 3000;
+
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
@@ -21,28 +23,37 @@ app.get('/add-preferencia', function(req, res) {
     console.log('Request', req.query);
     res.status(200);
 
-    //PRODUCTO
+    // DATOS DEL PRODUCTO
     const title = req.query.title || '';
     const img = req.query.img || '';
     const price = Number(req.query.price) || 0;
     const unit = Number(req.query.unit) || 1;
     const id = '1234';
-    const description = 'Dispositivo movil de tienda e-commerce';
+    const description = 'Dispositivo móvil de tienda e-commerce';
     const external_reference = 'fdettorre@gmail.com';
-    //PAGADOR
+
+    //DATOS DEL PAGADOR
+
     const name = "Lalo Landa";
     const email = "test_user_63274575@testuser.com";
     const area_code = "11";
     const number = 22223333;
-    //Direccion
+
+    //DIRECCION DEL PAGADOR
+
     const street_name = "Calle False";
     const street_number = 123;
     const zip_code = "1111";
-    //BACK URLS
+
+    //RETORNOS - BACK URLS
+
     const approved = 'http://localhost:3000/approved';
     const pending = 'http://localhost:3000/pending';
     const rejected = 'http://localhost:3000/rejected';
-    //EXCLUIR PAGOS ('atm','amex')
+
+
+    //CREACION DE PREFERENCIA CON EXCLUSION DE TIPOS DE PAGO
+
     const preferencia = {
         items: [{
             id,
@@ -89,6 +100,7 @@ app.get('/add-preferencia', function(req, res) {
         integrator_id: "dev_24c65fb163bf11ea96500242ac130004"
     });
 
+
     mercadopago.preferences
         .create(preferencia)
         .then(function(response) {
@@ -107,4 +119,4 @@ app.use(express.static('assets'));
 
 app.use('/assets', express.static(__dirname + '/assets'));
 
-app.listen(3000);
+app.listen(port);
