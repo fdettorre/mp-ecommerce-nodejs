@@ -70,7 +70,7 @@ app.get('/add-preferencia', function(req, res) {
         }],
         payment_methods: {
             excluded_payment_methods: [{
-                id: "amex",
+                name: "amex",
             }],
             excluded_payment_types: [{
                 //     id: "amex",
