@@ -116,6 +116,13 @@ app.get('/approved', function(req, res) {
     res.render('approved', req.query);
 });
 
+app.get('/pending', function(req, res) {
+    res.render('pending', req.query);
+});
+
+app.get('/rejected', function(req, res) {
+    res.render('rejected', req.query);
+});
 
 
 app.use(express.static('assets'));
