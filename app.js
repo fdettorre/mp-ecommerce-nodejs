@@ -47,9 +47,9 @@ app.get('/add-preferencia', function(req, res) {
 
     //RETORNOS - BACK URLS
 
-    const approved = 'http://localhost:3000/approved';
-    const pending = 'http://localhost:3000/pending';
-    const rejected = 'http://localhost:3000/rejected';
+    const approved = 'https://fdettorre-mp-commerce-nodejs.herokuapp.com/approved';
+    const pending = 'https://fdettorre-mp-commerce-nodejs.herokuapp.com/pending';
+    const rejected = 'https://fdettorre-mp-commerce-nodejs.herokuapp.com/rejected';
 
 
     //CREACION DE PREFERENCIA CON EXCLUSION DE TIPOS DE PAGO
@@ -71,7 +71,7 @@ app.get('/add-preferencia', function(req, res) {
                     id: "atm",
                 },
             ],
-            intallments: 6
+            installments: 6,
         },
         payer: {
             name,
@@ -105,14 +105,17 @@ app.get('/add-preferencia', function(req, res) {
         .create(preferencia)
         .then(function(response) {
             console.log(response);
-            res.json({
-                ok: response,
-            });
+            res.redirect(response.body.init_point);
         })
         .catch(function(error) {
             console.log(error);
         });
 });
+
+app.get('/approved', function(req, res) {
+    res.render('approved', req.query);
+});
+
 
 
 app.use(express.static('assets'));
