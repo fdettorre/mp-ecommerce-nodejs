@@ -132,6 +132,7 @@ app.get('/rejected', function(req, res) {
 
 app.post('/notifications', function(req, res) {
     try {
+        console.log("Notificacion Pago", req.body);
         res.sendStatus(200);
     } catch (error) {
         res.sendStatus(404);
