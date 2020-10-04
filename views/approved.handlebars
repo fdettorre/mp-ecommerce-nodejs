@@ -9,7 +9,7 @@
                             <img src="./assets/music-audio-alp-201709" alt="" width="1440" height="320" data-scale-params-2="wid=2880&amp;hei=640&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503948581306" class="pd-billboard-hero ir">
                         </div>
                         <div class="pd-billboard-info">
-                            <h1 class="pd-billboard-header pd-util-compact-small-18">Tienda e-commerce</h1>
+                            <h1 class="pd-billboard-header pd-util-compact-small-18">Resultado Transacción</h1>
                         </div>
                     </div>
                 </div>
@@ -22,49 +22,54 @@
             <div class="as-accessories" id="as-accessories">
                 <div class="as-accessories-header">
                     <div class="as-search-results-count">
-                        <span class="as-search-results-value"></span>
+                        
+                         <div class="as-l-container">
+                                                
+                                <hr>
+                                <h2 class=" colornav-swatch-silicone-royalblue">Pago aprobado - Gracias por su compra</h2>
+                                <hr>
+
+                                <hr>
+                                <h3> Colletion ID: {{ collection_id }}</h3>
+                                <hr>
+
+                                <hr>
+                                <h3> Collectio Status: {{ collection_status }}</h3>
+                                <hr>
+
+                                <hr>
+                                <h3> External Reference: {{ external_reference }}</h3>
+                                <hr>
+
+                                <hr>
+                                <h3> Tipo de Pago: {{ payment_type }}</h3>
+                                <hr>
+                                
+                                <hr>
+                                <h3> ID Preferencia: {{ preference_id }}</h3>
+                                <hr>
+
+                                <hr>
+                                <h3> ID Sitio {{ site_id }}</h3>
+                                <hr>
+                                
+                                <hr>
+                                <h3> Proccesing Mode: {{ processing_mode }}</h3>
+                                <hr>
+
+                                <hr>
+                                <h3> ID Merchant: {{ merchant_account_id }}</h3>
+                                <hr>
+                                
+
+                            </div>
+
+                            <p></p>
+
+                             <form action="/" method="get">
+                                <button type="submit" class="mercadopago-button" formmethod="get">Home</button>
+                            </form>
                     </div>
-                </div>
-                <div class="as-searchnav-placeholder " style="height: 77px;">
-                    <div class="row as-search-navbar" id="as-search-navbar" style="width: auto;">
-                        
-                        <hr>
-                        <h2>Pago aprobado!</h2>
-
-                        <hr>
-                        <h3> "Colletion ID:" {{ collection_id }}</h3>
-                        <hr>
-
-                        <hr>
-                        <h3> {{ collection_status }}</h3>
-                        <hr>
-
-                        <hr>
-                        <h3> {{ external_reference }}</h3>
-                        <hr>
-
-                        <hr>
-                        <h3> {{ payment_type }}</h3>
-                        <hr>
-                        
-                        <hr>
-                        <h3> {{ preference_id }}</h3>
-                        <hr>
-
-                        <hr>
-                        <h3> {{ site_id }}</h3>
-                        <hr>
-                        
-                        <hr>
-                        <h3> {{ processing_mode }}</h3>
-                        <hr>
-
-                        <hr>
-                        <h3> {{ merchant_account_id }}</h3>
-                        <hr>
-                        
-
-                     </div>
                 </div>
             </div>
 
