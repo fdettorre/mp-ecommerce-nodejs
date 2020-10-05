@@ -29,8 +29,8 @@ app.get('/add-preferencia', function(req, res) {
     res.status(200);
 
     // DATOS DEL PRODUCTO
-    const title = req.query.title || '';
-    const img = req.query.img || '';
+    const title = 'https://fdettorre-mp-commerce-nodejs.herokuapp.com/' + req.query.title || '';
+    const img = 'https://fdettorre-mp-commerce-nodejs.herokuapp.com/' + req.query.img || '';
     const price = Number(req.query.price) || 0;
     const unit = Number(req.query.unit) || 1;
     const id = '1234';
@@ -39,14 +39,15 @@ app.get('/add-preferencia', function(req, res) {
 
     //DATOS DEL PAGADOR
 
-    const name = "Lalo Landa";
+    const name = "Lalo";
+    const surname = "Landa";
     const email = "test_user_63274575@testuser.com";
     const area_code = "11";
     const number = 22223333;
 
     //DIRECCION DEL PAGADOR
 
-    const street_name = "Calle False";
+    const street_name = "False";
     const street_number = 123;
     const zip_code = "1111";
 
@@ -73,15 +74,13 @@ app.get('/add-preferencia', function(req, res) {
                 name: "amex",
             }],
             excluded_payment_types: [{
-                //     id: "amex",
-                // },
-                // {
                 id: "atm",
             }, ],
             installments: 6,
         },
         payer: {
             name,
+            surname,
             email,
             phone: {
                 area_code,
