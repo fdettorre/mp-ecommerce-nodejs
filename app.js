@@ -29,9 +29,9 @@ app.get('/add-preferencia', function(req, res) {
     res.status(200);
 
     // DATOS DEL PRODUCTO
-    const title = 'https://fdettorre-mp-commerce-nodejs.herokuapp.com/' + req.query.title || '';
-    const img = 'https://fdettorre-mp-commerce-nodejs.herokuapp.com/' + req.query.img || '';
-    const price = Number(req.query.price) || 0;
+    const title = req.query.title || '';
+    const img = `https://fdettorre-mp-commerce-nodejs.herokuapp.com/${imagen.substring(2)}` || '';
+    const price = Number(req.query.price) || 0.0;
     const unit = Number(req.query.unit) || 1;
     const id = '1234';
     const description = 'Dispositivo móvil de tienda e-commerce';
