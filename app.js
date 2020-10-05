@@ -30,7 +30,7 @@ app.get('/add-preferencia', function(req, res) {
 
     // DATOS DEL PRODUCTO
     const title = req.query.title || '';
-    const img = `https://fdettorre-mp-commerce-nodejs.herokuapp.com/${imagen.substring(2)}` || '';
+    const img = 'https://fdettorre-mp-commerce-nodejs.herokuapp.com/${imagen.substring(2)}' || '';
     const price = Number(req.query.price) || 0.0;
     const unit = Number(req.query.unit) || 1;
     const id = '1234';
