@@ -8,3 +8,20 @@ live_mode: true,
 type: 'payment',
 user_id: '469485398'
 }
+
+
+
+CORREGIDO AMEX 20:00
+
+ID Preferencia: 469485398-0abbde44-5418-4d9d-bf19-4f1885484bd5
+
+Notificacion Pago {
+action: 'payment.created',
+api_version: 'v1',
+data: { id: '10482416913' },
+date_created: '2020-10-04T23:02:44Z',
+id: 6507563973,
+live_mode: true,
+type: 'payment',
+user_id: '469485398'
+}
