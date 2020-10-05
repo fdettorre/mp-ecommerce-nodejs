@@ -71,10 +71,10 @@ app.get('/add-preferencia', function(req, res) {
         }],
         payment_methods: {
             excluded_payment_methods: [{
-                id: amex,
+                id: "amex",
             }],
             excluded_payment_types: [{
-                id: atm,
+                id: "atm",
             }, ],
             installments: 6,
         },
